@@ -39,9 +39,6 @@ def wrangle_zillow(df):
     #Remove unwanted columns including ids, redundant columns
     df = remove_columns(df, ['id','parcelid', 'roomcnt', 'propertylandusedesc','finishedsquarefeet12', 'regionidzip', 'heatingorsystemdesc', 'unitcnt','censustractandblock','calculatedbathnbr','fullbathcnt', 'regionidcity' , 'structuretaxvaluedollarcnt', 'landtaxvaluedollarcnt','propertycountylandusecode', 'propertylandusetypeid', 'regionidcounty' , 'assessmentyear', 'propertyzoningdesc','transactiondate','heatingorsystemtypeid', 'buildingqualitytypeid','yearbuilt', 'taxamount', 'taxvaluedollarcnt' ])
     #Convert categorical column to dummies
-    dummy_df = pd.get_dummies(df['fips'])
-    df = pd.concat([df, dummy_df], axis=1)
-    df = df.drop(columns=['fips'])
     return df
 
 
